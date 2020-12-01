@@ -7,62 +7,7 @@ import com.vaadin.flow.component.littemplate.BundleLitParser;
 import org.junit.Test;
 
 public class ParseTest {
-    private String content = """
-            var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-                var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-                if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-                else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-                return c > 3 && r && Object.defineProperty(target, key, r), r;
-            };
-            import { customElement, html, LitElement } from "lit-element";
-            let AboutView = class AboutView extends LitElement {
-                render() {
-                    return html `<vaadin-split-layout style="width: 100%; height: 100%;">
-                  <div style="width:400px;display:flex;flex-direction:column;">
-                    <div style="padding:var(--lumo-space-l);flex-grow:1;">
-                      <vaadin-form-layout>
-                        <vaadin-text-field
-                          label="First name"
-                          id="firstName"
-                        ></vaadin-text-field
-                        ><vaadin-text-field
-                          label="Last name"
-                          id="lastName"
-                        ></vaadin-text-field
-                        ><vaadin-date-picker
-                          label="Date of birth"
-                          id="dateOfBirth"
-                        ></vaadin-date-picker
-                        ><vaadin-text-field
-                          label="Occupation"
-                          id="occupation"
-                        ></vaadin-text-field
-                        ><vaadin-checkbox
-                          id="important"
-                          style="padding-top: var(--lumo-space-m);"
-                          >Important</vaadin-checkbox
-                        >
-                      </vaadin-form-layout>
-                    </div>
-                    <vaadin-horizontal-layout
-                      style="flex-wrap:wrap;width:100%;background-color:var(--lumo-contrast-5pct);padding:var(--lumo-space-s) var(--lumo-space-l);"
-                      theme="spacing"
-                    >
-                      <vaadin-button theme="primary" id="save">Save</vaadin-button>
-                      <vaadin-button theme="tertiary" slot="" id="cancel"
-                        >Cancel</vaadin-button
-                      >
-                    </vaadin-horizontal-layout>
-                  </div>
-                </vaadin-split-layout>`;
-                }
-            };
-            AboutView = __decorate([
-                customElement("about-view")
-            ], AboutView);
-            export { AboutView };
-
-            """;
+    private String content = "\n            var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n                var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n                if (typeof Reflect === 'object' && typeof Reflect.decorate === 'function') r = Reflect.decorate(decorators, target, key, desc);\n                else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n                return c > 3 && r && Object.defineProperty(target, key, r), r;\n            };\n            import { customElement, html, LitElement } from 'lit-element';\n            let AboutView = class AboutView extends LitElement {\n                render() {\n                    return html `<vaadin-split-layout style='width: 100%; height: 100%;'>\n                  <div style='width:400px;display:flex;flex-direction:column;'>\n                    <div style='padding:var(--lumo-space-l);flex-grow:1;'>\n                      <vaadin-form-layout>\n                        <vaadin-text-field\n                          label='First name'\n                          id='firstName'\n                        ></vaadin-text-field\n                        ><vaadin-text-field\n                          label='Last name'\n                          id='lastName'\n                        ></vaadin-text-field\n                        ><vaadin-date-picker\n                          label='Date of birth'\n                          id='dateOfBirth'\n                        ></vaadin-date-picker\n                        ><vaadin-text-field\n                          label='Occupation'\n                          id='occupation'\n                        ></vaadin-text-field\n                        ><vaadin-checkbox\n                          id='important'\n                          style='padding-top: var(--lumo-space-m);'\n                          >Important</vaadin-checkbox\n                        >\n                      </vaadin-form-layout>\n                    </div>\n                    <vaadin-horizontal-layout\n                      style='flex-wrap:wrap;width:100%;background-color:var(--lumo-contrast-5pct);padding:var(--lumo-space-s) var(--lumo-space-l);'\n                      theme='spacing'\n                    >\n                      <vaadin-button theme='primary' id='save'>Save</vaadin-button>\n                      <vaadin-button theme='tertiary' slot='' id='cancel'\n                        >Cancel</vaadin-button\n                      >\n                    </vaadin-horizontal-layout>\n                  </div>\n                </vaadin-split-layout>`;\n                }\n            };\n            AboutView = __decorate([\n                customElement('about-view')\n            ], AboutView);\n            export { AboutView };\n";
 
     @Test
     public void parseTemplate() throws IOException {
